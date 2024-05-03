@@ -13,7 +13,7 @@ const normalizePort = val => {
   }
   return false;
 };
-const port = normalizePort(process.env.PORT || '4000');
+const port = normalizePort(process.env.PORT || 'https://vs-portfolio-api-0c0adab5969b.herokuapp.com/');//4000
 app.set('port', port);
 
 const errorHandler = error => {
