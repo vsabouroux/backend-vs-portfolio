@@ -14,9 +14,9 @@ exports.createProject = (req, res, next) => {
   const project = new Project({
     ...projectObjet,
     userId: req.auth.userId,
-    imageUrl: `${req.protocol}://${req.get("host")}/images/${
+    imageUrl: `https://${req.get("host")}/images/${
       req.file.filename
-    }`,
+    }`,//changement des ${req.protocol} en https
   });
   project
     .save()
@@ -89,7 +89,7 @@ exports.modifyProject = (req, res, next) => {
   }
   // Vérifier si un nouveau fichier a été téléchargé pour remplacer l'image existante
   if (req.file) {
-    updatedFields.imageUrl = `${req.protocol}://${req.get("host")}/images/${
+    updatedFields.imageUrl = `https://${req.get("host")}/images/${
       req.file.filename
     }`;
     // Supprime l'image existante
