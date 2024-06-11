@@ -44,7 +44,7 @@ exports.submitContactForm = async (req, res) => {
           from: process.env.EMAIL_USER,
           to: email,
           subject: 'Confirmation de réception de votre message',
-          text: `Bonjour ${firstname},\n\nVotre message a bien été reçu. Nous vous remercions pour votre intérêt et nous vous répondrons sous peu.\n\nCordialement,\n V Sabouroux`
+          text: `Bonjour ${firstname},\n\nVotre message a bien été reçu. Nous vous remercions pour votre intérêt et vous répondrons dans les meilleurs délais.\n\nCordialement,\n V Sabouroux`
         };
         
         transporter.sendMail(confirmationMailOptions, function(error, info){
